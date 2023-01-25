@@ -67,3 +67,6 @@ Within the module TestBench there are three java classes: PositiveTests, Negativ
 3. In the method "afterTest" comment the line "closeBrowser();"
 4. Save changes
 5. Run your test how it suits you best as explained before.
+
+For further information about the author, please consult
+[Victor Caminero LinkedIn profile](https://www.linkedin.com/in/victor-caminero/)
