@@ -6,9 +6,9 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class NegativeTests extends BaseTest {
+public class PositiveTests extends BaseTest {
 
     String textToBeSearched = "statista";
     String expectedTextToBeFound = "Statista GmbH";
@@ -23,27 +23,27 @@ public class NegativeTests extends BaseTest {
     }
 
     @Test
-    @DisplayName("Negative test | expected text is not in the top 5")
-    public void expected_Search_Is_Not_In_The_Top_Five() {
-        textToBeSearched = "siemens";
+    @DisplayName("Happy Path | expected text is in the top 5")
+    public void happyPath() {
         methods.navigateToTheApp(urlApp);
         methods.acceptCookies();
         methods.doSearch(textToBeSearched);
         methods.waitUntilPageIsLoaded(3);
         boolean isPresent = methods.isTheElementPresent(methods.searchResults, amountOfElementsTobeEvaluated, expectedTextToBeFound);
-        assertFalse(isPresent, expectedTextToBeFound + " is not within the top " + amountOfElementsTobeEvaluated + " results");
+        assertTrue(isPresent, expectedTextToBeFound + " is not within the top " + amountOfElementsTobeEvaluated + " results");
     }
 
     @Test
-    @DisplayName("Negative test | No result found")
-    public void no_Search_Result_Found() {
-        textToBeSearched = "nothingToSearch";
+    @DisplayName("Positive test | expected text is in the top 4")
+    public void expected_Search_Is_In_The_Top_Four() {
+        expectedTextToBeFound = "Statista Inc";
+        amountOfElementsTobeEvaluated = 4;
         methods.navigateToTheApp(urlApp);
         methods.acceptCookies();
         methods.doSearch(textToBeSearched);
         methods.waitUntilPageIsLoaded(3);
         boolean isPresent = methods.isTheElementPresent(methods.searchResults, amountOfElementsTobeEvaluated, expectedTextToBeFound);
-        assertFalse(isPresent, expectedTextToBeFound + " is not within the top " + amountOfElementsTobeEvaluated + " results");
+        assertTrue(isPresent, expectedTextToBeFound + " is not within the top " + amountOfElementsTobeEvaluated + " results");
     }
 
 }
