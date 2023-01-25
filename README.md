@@ -1,4 +1,6 @@
-# This is the test automation framework designed with the purpose of verifying the accuracy of the search functionality.
+<h1 align="center">
+This is the test automation framework designed with the purpose of verifying the accuracy of the search functionality.
+</h1>
 
 ## Components and tools used:
 In this framework we used different components, which we break them down below with its respective descriptions:
