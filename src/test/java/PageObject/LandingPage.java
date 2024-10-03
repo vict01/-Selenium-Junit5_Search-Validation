@@ -27,10 +27,6 @@ public class LandingPage extends BasePage {
 
     // *************************** Methods definition ***************************
 
-    public void navigateToTheApp(String urlApp) {
-        driver.get(urlApp);
-    }
-
     public void acceptCookies() {
         waitForElementTobeClickable(cookieConsent);
         cookieConsent.click();

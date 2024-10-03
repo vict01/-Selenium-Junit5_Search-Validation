@@ -5,7 +5,6 @@ import TestFramework.BaseTest;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
-
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class PositiveTests extends BaseTest {
@@ -25,7 +24,7 @@ public class PositiveTests extends BaseTest {
     @Test
     @DisplayName("Happy Path | expected text is in the top 5")
     public void happyPath() {
-        methods.navigateToTheApp(urlApp);
+        navigateToTheApp(urlApp);
         methods.acceptCookies();
         methods.doSearch(textToBeSearched);
         methods.waitUntilPageIsLoaded(3);
@@ -36,9 +35,9 @@ public class PositiveTests extends BaseTest {
     @Test
     @DisplayName("Positive test | expected text is in the top 4")
     public void expected_Search_Is_In_The_Top_Four() {
-        expectedTextToBeFound = "Statista Inc";
+        expectedTextToBeFound = "Statista Pte. Ltd.";
         amountOfElementsTobeEvaluated = 4;
-        methods.navigateToTheApp(urlApp);
+        navigateToTheApp(urlApp);
         methods.acceptCookies();
         methods.doSearch(textToBeSearched);
         methods.waitUntilPageIsLoaded(3);

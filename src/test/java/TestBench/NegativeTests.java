@@ -5,7 +5,6 @@ import TestFramework.BaseTest;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
-
 import static org.junit.jupiter.api.Assertions.assertFalse;
 
 public class NegativeTests extends BaseTest {
@@ -26,7 +25,7 @@ public class NegativeTests extends BaseTest {
     @DisplayName("Negative test | expected text is not in the top 5")
     public void expected_Search_Is_Not_In_The_Top_Five() {
         textToBeSearched = "siemens";
-        methods.navigateToTheApp(urlApp);
+        navigateToTheApp(urlApp);
         methods.acceptCookies();
         methods.doSearch(textToBeSearched);
         methods.waitUntilPageIsLoaded(3);
@@ -38,7 +37,7 @@ public class NegativeTests extends BaseTest {
     @DisplayName("Negative test | No result found")
     public void no_Search_Result_Found() {
         textToBeSearched = "nothingToSearch";
-        methods.navigateToTheApp(urlApp);
+        navigateToTheApp(urlApp);
         methods.acceptCookies();
         methods.doSearch(textToBeSearched);
         methods.waitUntilPageIsLoaded(3);

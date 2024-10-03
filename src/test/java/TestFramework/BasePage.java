@@ -6,17 +6,14 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.util.concurrent.TimeUnit;
 
 public class BasePage {
 
-    protected WebDriver driver;
     protected AjaxElementLocatorFactory ajaxElement;
     protected WebDriverWait wait;
 
     public BasePage(WebDriver driver) {
-        this.driver = driver;
         ajaxElement = new AjaxElementLocatorFactory(driver, 10);
         PageFactory.initElements(ajaxElement, this);
         wait = new WebDriverWait(driver, 10, 100);
