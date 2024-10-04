@@ -28,7 +28,7 @@ public class NegativeTests extends BaseTest {
         navigateToTheApp(urlApp);
         methods.acceptCookies();
         methods.doSearch(textToBeSearched);
-        methods.waitUntilPageIsLoaded(3);
+        methods.waitUntilResultIsLoaded();
         boolean isPresent = methods.isTheElementPresent(methods.searchResults, amountOfElementsTobeEvaluated, expectedTextToBeFound);
         assertFalse(isPresent, expectedTextToBeFound + " is not within the top " + amountOfElementsTobeEvaluated + " results");
     }
@@ -40,7 +40,7 @@ public class NegativeTests extends BaseTest {
         navigateToTheApp(urlApp);
         methods.acceptCookies();
         methods.doSearch(textToBeSearched);
-        methods.waitUntilPageIsLoaded(3);
+        methods.waitUntilResultIsLoaded();
         boolean isPresent = methods.isTheElementPresent(methods.searchResults, amountOfElementsTobeEvaluated, expectedTextToBeFound);
         assertFalse(isPresent, expectedTextToBeFound + " is not within the top " + amountOfElementsTobeEvaluated + " results");
     }

@@ -6,7 +6,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import java.util.concurrent.TimeUnit;
+import java.util.List;
 
 public class BasePage {
 
@@ -31,12 +31,12 @@ public class BasePage {
         wait.until(ExpectedConditions.invisibilityOf(element));
     }
 
-    public void waitUntilPageIsLoaded(int pause) {
-        try {
-            TimeUnit.SECONDS.sleep(pause);
-        } catch (InterruptedException ie) {
-            Thread.currentThread().interrupt();
-        }
+    protected void waitForAttributeContains(WebElement element, String attribute, String value) {
+        wait.until(ExpectedConditions.attributeContains(element, attribute, value));
+    }
+
+    protected void waitForVisibilityOfAllElements(List<WebElement> elements) {
+        wait.until(ExpectedConditions.visibilityOfAllElements(elements));
     }
 
 }

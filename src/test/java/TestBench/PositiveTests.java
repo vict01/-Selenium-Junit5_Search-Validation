@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class PositiveTests extends BaseTest {
 
     String textToBeSearched = "statista";
-    String expectedTextToBeFound = "Statista GmbH";
+    String expectedTextToBeFound = "Statista Pte. Ltd.";
     int amountOfElementsTobeEvaluated = 5;
 
     LandingPage methods;
@@ -27,7 +27,7 @@ public class PositiveTests extends BaseTest {
         navigateToTheApp(urlApp);
         methods.acceptCookies();
         methods.doSearch(textToBeSearched);
-        methods.waitUntilPageIsLoaded(3);
+        methods.waitUntilResultIsLoaded();
         boolean isPresent = methods.isTheElementPresent(methods.searchResults, amountOfElementsTobeEvaluated, expectedTextToBeFound);
         assertTrue(isPresent, expectedTextToBeFound + " is not within the top " + amountOfElementsTobeEvaluated + " results");
     }
@@ -35,12 +35,12 @@ public class PositiveTests extends BaseTest {
     @Test
     @DisplayName("Positive test | expected text is in the top 4")
     public void expected_Search_Is_In_The_Top_Four() {
-        expectedTextToBeFound = "Statista Pte. Ltd.";
+        expectedTextToBeFound = "Statista GmbH";
         amountOfElementsTobeEvaluated = 4;
         navigateToTheApp(urlApp);
         methods.acceptCookies();
         methods.doSearch(textToBeSearched);
-        methods.waitUntilPageIsLoaded(3);
+        methods.waitUntilResultIsLoaded();
         boolean isPresent = methods.isTheElementPresent(methods.searchResults, amountOfElementsTobeEvaluated, expectedTextToBeFound);
         assertTrue(isPresent, expectedTextToBeFound + " is not within the top " + amountOfElementsTobeEvaluated + " results");
     }
